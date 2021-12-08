@@ -25,9 +25,10 @@ class Remote {
       timeout: 2000,
       baseUrl: "http://localhost",
     });
-    this.interceptors();
     this.requestList = [];
     this.CancelToken = Axios.CancelToken;
+    this.interceptorsRequest();
+    this.interceptorsResponse();
   }
 
   stopRequest = (url, cancel) => {
