@@ -41,7 +41,7 @@ class Remote {
 
   allowRequest = (url) => {
     const index = this.requestList.indexOf(url);
-    this.requestList.splice(index, 1);
+    if (index !== -1) return this.requestList.splice(index, 1);
   };
 
   interceptorsRequest = () => {
